@@ -7,17 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-<<<<<<< HEAD
-gem 'rails', '5.1.4'
-
-# Use postgresQL as the database for production
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
-=======
 gem 'rails', '5.0.0'
->>>>>>> d76eabcfdcaf155b1afea5b5fff4269910d6c05e
 
 # Use Puma as the app server
 gem 'puma', '3.4.0'
@@ -68,4 +58,4 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-ruby '2.3.0'
+ruby '2.3.1'

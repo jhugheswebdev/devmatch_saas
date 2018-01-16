@@ -173,10 +173,10 @@ DEPENDENCIES
   turbolinks (= 5.0.0)
   tzinfo-data
   uglifier (= 3.0.0)
-  web-console (= 3.3.0)
+  web-console
 
 RUBY VERSION
-   ruby 2.4.1p111
+   ruby 2.3.1p112
 
 BUNDLED WITH
    1.16.1
