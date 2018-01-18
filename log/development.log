@@ -1307,3 +1307,44 @@ Migrating to CreateContacts (20180118194756)
   [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2018-01-18 19:49:45 UTC], ["updated_at", 2018-01-18 19:49:45 UTC]]
   [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/contacts/new" for ::1 at 2018-01-18 15:18:02 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 94ms (Views: 83.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts/new" for ::1 at 2018-01-18 15:20:20 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (29.8ms)
+Completed 200 OK in 501ms (Views: 482.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts/new" for ::1 at 2018-01-18 15:20:23 -0500
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 62ms (Views: 58.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/contacts" for ::1 at 2018-01-18 15:20:33 -0500
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xsUFbpdkcZvpC8WI6e+uzDiMG23ONqVqzSIbLy+KPGn1MODZzeWoFMuBGr3N/tmRG6Lq4qB4wF5Qk3+hAxk5oA==", "contact"=>{"name"=>"hgss", "email"=>"sfdfdsf", "comments"=>"sdfdsfdsf"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "comments", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "hgss"], ["email", "sfdfdsf"], ["comments", "sdfdsfdsf"], ["created_at", 2018-01-18 20:20:33 UTC], ["updated_at", 2018-01-18 20:20:33 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/contacts/new
+Completed 302 Found in 9ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/contacts/new" for ::1 at 2018-01-18 15:20:33 -0500
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 115ms (Views: 110.6ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mContact Load (1.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
