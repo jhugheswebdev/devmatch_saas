@@ -1348,3 +1348,20 @@ Completed 200 OK in 115ms (Views: 110.6ms | ActiveRecord: 0.0ms)
 
 
   [1m[36mContact Load (1.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+Started GET "/" for ::1 at 2018-01-22 12:19:22 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 430ms (Views: 416.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts/new" for ::1 at 2018-01-22 12:20:01 -0500
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (24.6ms)
+Completed 200 OK in 99ms (Views: 85.8ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mContact Load (2.6ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mContact Load (1.5ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
