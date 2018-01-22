@@ -1486,3 +1486,113 @@ Processing by ContactsController#new as HTML
 Completed 200 OK in 71ms (Views: 67.5ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/contacts/new" for ::1 at 2018-01-22 14:38:30 -0500
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 72ms (Views: 68.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts/new" for ::1 at 2018-01-22 14:38:44 -0500
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 61ms (Views: 57.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/contacts" for ::1 at 2018-01-22 14:38:50 -0500
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3KDyeJVbItxjgeBFZA7tVKIertH8tEQ/1QT8t5Io4K/vVRfPz9r7U0ELP3BAH5oJgTBfXpL6IQtItZg5vrvlZg==", "contact"=>{"name"=>"", "email"=>"", "comments"=>""}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/contacts/new
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/contacts/new" for ::1 at 2018-01-22 14:38:50 -0500
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 69ms (Views: 65.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/contacts" for ::1 at 2018-01-22 14:39:29 -0500
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SyntK/CiuiPhjqAxGa/OAyBTbWr7Z8KVEUps90MMBfx43AicqiNjrMMEfwQ9vrleA32c5ZUpp6GM+wh5b58ANQ==", "contact"=>{"name"=>"sffdsa", "email"=>"fsdfasdf", "comments"=>"sdfasdf"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "comments", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "sffdsa"], ["email", "fsdfasdf"], ["comments", "sdfasdf"], ["created_at", 2018-01-22 19:39:29 UTC], ["updated_at", 2018-01-22 19:39:29 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/contacts/new
+Completed 302 Found in 8ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/contacts/new" for ::1 at 2018-01-22 14:39:29 -0500
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 77ms (Views: 72.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts/new" for ::1 at 2018-01-22 14:40:03 -0500
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 72ms (Views: 61.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/contacts" for ::1 at 2018-01-22 14:40:05 -0500
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eNEjnFWT8zJbXGETCxAZXwbnBkV1YhV8nne6Q9xXYTVLJMYrDxIqvXnWviYvAW4CJcn3yhsscEgDxt7N8MRk/A==", "contact"=>{"name"=>"", "email"=>"", "comments"=>""}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/contacts/new
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/contacts/new" for ::1 at 2018-01-22 14:40:05 -0500
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 64ms (Views: 61.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts/new" for ::1 at 2018-01-22 14:43:35 -0500
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 65ms (Views: 61.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/contacts" for ::1 at 2018-01-22 14:43:37 -0500
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bkB/MKueFjp7RIXX3/QUQJPkgeEMA3mozM8dRlHGDI1dtZqH8R/PtVnOWuL75WMdsMpwbmJNHJxRfnnIfVUJRA==", "contact"=>{"name"=>"", "email"=>"", "comments"=>""}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/contacts/new
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/contacts/new" for ::1 at 2018-01-22 14:43:37 -0500
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 65ms (Views: 60.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/contacts" for ::1 at 2018-01-22 14:43:45 -0500
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pjwgdmoxnrQykTEQiOCHKetBABKWpOnjtaMcB8UymYeVycXBMLBHOxAb7iWs8fB0yG/xnfjqjNcoEniJ6aGcTg==", "contact"=>{"name"=>"fdsaf", "email"=>"fsfdsa", "comments"=>"fsdafds"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "comments", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "fdsaf"], ["email", "fsfdsa"], ["comments", "fsdafds"], ["created_at", 2018-01-22 19:43:45 UTC], ["updated_at", 2018-01-22 19:43:45 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/contacts/new
+Completed 302 Found in 7ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/contacts/new" for ::1 at 2018-01-22 14:43:45 -0500
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 77ms (Views: 72.8ms | ActiveRecord: 0.0ms)
+
+
