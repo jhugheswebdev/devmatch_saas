@@ -1611,3 +1611,95 @@ Processing by ContactsController#new as HTML
 Completed 200 OK in 121ms (Views: 105.6ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/contact-us" for ::1 at 2018-01-25 14:16:05 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (32.0ms)
+Completed 500 Internal Server Error in 624ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_contact' for #<#<Class:0x007fac2e15ee88>:0x007fac2ba97cc8>
+Did you mean?  new_contact_url):
+    29:             <div class="collapse navbar-collapse" id="main-nav-collapse">
+    30:                 <ul class="nav navbar-nav navbar-right">
+    31:                     <li><%= link_to "About", about_path %></li>
+    32:                     <li><%= link_to "Contact Us", new_contact %></li>
+    33:                 </ul>
+    34:             </div><!-- /.navbar-collapse -->
+    35:         </div>
+  
+app/views/layouts/application.html.erb:32:in `_app_views_layouts_application_html_erb__870667442558035938_70188725401340'
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.8ms)
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (143.7ms)
+Started GET "/" for ::1 at 2018-01-25 14:16:21 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 264ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_contact' for #<#<Class:0x007fac31d6b700>:0x007fac31d6a350>
+Did you mean?  new_contact_url):
+    29:             <div class="collapse navbar-collapse" id="main-nav-collapse">
+    30:                 <ul class="nav navbar-nav navbar-right">
+    31:                     <li><%= link_to "About", about_path %></li>
+    32:                     <li><%= link_to "Contact Us", new_contact %></li>
+    33:                 </ul>
+    34:             </div><!-- /.navbar-collapse -->
+    35:         </div>
+  
+app/views/layouts/application.html.erb:32:in `_app_views_layouts_application_html_erb__870667442558035938_70188744897420'
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (120.2ms)
+Started GET "/" for ::1 at 2018-01-25 14:19:20 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 443ms (Views: 431.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact-us" for ::1 at 2018-01-25 14:19:29 -0500
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (36.3ms)
+Completed 200 OK in 150ms (Views: 132.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/about" for ::1 at 2018-01-25 14:19:33 -0500
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 83ms (Views: 78.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-01-25 14:19:36 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 86ms (Views: 81.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-01-25 15:16:57 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 585ms (Views: 572.9ms | ActiveRecord: 0.0ms)
+
+
