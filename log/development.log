@@ -2582,3 +2582,313 @@ Processing by Users::RegistrationsController#new as HTML
 Completed 200 OK in 110ms (Views: 96.1ms | ActiveRecord: 0.7ms)
 
 
+Started POST "/users" for ::1 at 2018-01-29 12:22:17 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /Users/jameshughes/wdi/Udemy/complete-web-developer-course/devmatch_saas/app/controllers/application_controller.rb:4)
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i2XnHCIfvhivyVNLT2PEhTyTfq3xXaCLv8LICPWn5RG660mP0r13ClzngRhbswW19EFvT+QS+4zLYId1kDZkoA==", "plan"=>"2", "user"=>{"email"=>"test3@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test3@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test3@example.com"], ["encrypted_password", "$2a$11$soOQA2ync8eaRoCg/Qd.cO2i5XYk0XoB8HedV6KvsjFN9reOPQWPK"], ["created_at", 2018-01-29 17:22:17 UTC], ["updated_at", 2018-01-29 17:22:17 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 1168ms (ActiveRecord: 2.6ms)
+
+
+  
+Stripe::InvalidRequestError (This customer has no attached payment source):
+  
+app/models/user.rb:11:in `save_with_payment'
+app/controllers/users/registrations_controller.rb:8:in `block in create'
+app/controllers/users/registrations_controller.rb:4:in `create'
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.8ms)
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (135.2ms)
+Started GET "/" for ::1 at 2018-01-29 12:22:48 -0500
+Processing by PagesController#home as HTML
+  [1m[36mPlan Load (0.3ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlan Load (0.3ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 506ms (Views: 480.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/sign_up?plan=2" for ::1 at 2018-01-29 12:22:51 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Parameters: {"plan"=>"2"}
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/_pro_form.html.erb (30.3ms)
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (43.9ms)
+Completed 200 OK in 124ms (Views: 123.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2018-01-29 12:23:24 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YlnMF1ol92E/Oe5gqhItJLbB2l7lJFrd2dei4haxeJ1T12KEqoc+c8wXPDO+wuwUfhPLvPBrAdqtde2fcyD5LA==", "plan"=>"2", "user"=>{"email"=>"test5@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test5@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test5@example.com"], ["encrypted_password", "$2a$11$kl41vdwltJsNAJ0aKaKK.ukxNrVc03ocZKLpBnDAlkPab42eyaQPS"], ["created_at", 2018-01-29 17:23:24 UTC], ["updated_at", 2018-01-29 17:23:24 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 821ms (ActiveRecord: 1.7ms)
+
+
+  
+Stripe::InvalidRequestError (This customer has no attached payment source):
+  
+app/models/user.rb:11:in `save_with_payment'
+app/controllers/users/registrations_controller.rb:8:in `block in create'
+app/controllers/users/registrations_controller.rb:4:in `create'
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.7ms)
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (122.2ms)
+Started GET "/" for ::1 at 2018-01-29 12:26:57 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /Users/jameshughes/wdi/Udemy/complete-web-developer-course/devmatch_saas/app/controllers/application_controller.rb:4)
+Processing by PagesController#home as HTML
+  [1m[36mPlan Load (0.2ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 564ms (Views: 538.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/sign_up?plan=2" for ::1 at 2018-01-29 12:27:01 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Parameters: {"plan"=>"2"}
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/_pro_form.html.erb (29.4ms)
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (41.8ms)
+Completed 200 OK in 132ms (Views: 115.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for ::1 at 2018-01-29 12:27:31 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eKRcWprFgX3QffOYsw9HG7FMWuGeheSzobW8SU+JjGdJKvLJamdIbyNTIcun34YreZ5LA4vKv7TVF/M0KhgN1g==", "plan"=>"2", "user"=>{"email"=>"test8@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test8@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test8@example.com"], ["encrypted_password", "$2a$11$3NrOmZUT7K2uVoc3gyPmmOiiJMMLg7zewBGPlbHxHn8zhb.L4p0su"], ["created_at", 2018-01-29 17:27:31 UTC], ["updated_at", 2018-01-29 17:27:31 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 1171ms (ActiveRecord: 1.9ms)
+
+
+  
+Stripe::InvalidRequestError (This customer has no attached payment source):
+  
+app/models/user.rb:11:in `save_with_payment'
+app/controllers/users/registrations_controller.rb:8:in `block in create'
+app/controllers/users/registrations_controller.rb:4:in `create'
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (128.0ms)
+Started GET "/users/sign_up?plan=2" for ::1 at 2018-01-29 12:29:37 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Parameters: {"plan"=>"2"}
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/_pro_form.html.erb (4.9ms)
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 100ms (Views: 98.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2018-01-29 12:30:11 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UtF498DJ+vH3ZGr1USbb+6c1hNAmG8LpPnRiwSOFFatjX9ZkMGsz4wRKuKZF9hrLb+eVMjNUme5K1i28RhSUGg==", "plan"=>"2", "user"=>{"email"=>"text9@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "text9@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "text9@example.com"], ["encrypted_password", "$2a$11$3l2V9ryDVPm52s25Ppy/Y.UnawlJwWTRzlwLZe7ScWEFPmpvz4Spi"], ["created_at", 2018-01-29 17:30:11 UTC], ["updated_at", 2018-01-29 17:30:11 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 735ms (ActiveRecord: 3.2ms)
+
+
+  
+Stripe::InvalidRequestError (This customer has no attached payment source):
+  
+app/models/user.rb:11:in `save_with_payment'
+app/controllers/users/registrations_controller.rb:8:in `block in create'
+app/controllers/users/registrations_controller.rb:4:in `create'
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.9ms)
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (126.8ms)
+Started POST "/users" for ::1 at 2018-01-29 12:39:23 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UtF498DJ+vH3ZGr1USbb+6c1hNAmG8LpPnRiwSOFFatjX9ZkMGsz4wRKuKZF9hrLb+eVMjNUme5K1i28RhSUGg==", "plan"=>"2", "user"=>{"email"=>"text9@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "text9@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "text9@example.com"], ["LIMIT", 1]]
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/_pro_form.html.erb (4.7ms)
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 348ms (Views: 189.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for ::1 at 2018-01-29 12:40:08 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"08f5sNkbv/JFm4+1l7ytMUusV+H5G7yXOPI5UkZm9vLiSVcjKbl24La1XeaDbGwBg35GA+xU55BMUHYvI/d3Qw==", "plan"=>"2", "user"=>{"email"=>"text19@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "text19@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "text19@example.com"], ["encrypted_password", "$2a$11$GlJINACKZ/bpYzdk3IYp5u7/XD.qDs24A8VkYzfVco2/H.vwk/VDu"], ["created_at", 2018-01-29 17:40:08 UTC], ["updated_at", 2018-01-29 17:40:08 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 764ms (ActiveRecord: 2.9ms)
+
+
+  
+Stripe::InvalidRequestError (This customer has no attached payment source):
+  
+app/models/user.rb:11:in `save_with_payment'
+app/controllers/users/registrations_controller.rb:8:in `block in create'
+app/controllers/users/registrations_controller.rb:4:in `create'
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.3ms)
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (123.5ms)
+Started GET "/" for ::1 at 2018-01-29 12:42:07 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /Users/jameshughes/wdi/Udemy/complete-web-developer-course/devmatch_saas/app/controllers/application_controller.rb:4)
+Processing by PagesController#home as HTML
+  [1m[36mPlan Load (0.2ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 651ms (Views: 625.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/sign_up?plan=2" for ::1 at 2018-01-29 12:42:10 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Parameters: {"plan"=>"2"}
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/_pro_form.html.erb (28.2ms)
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (41.3ms)
+Completed 200 OK in 133ms (Views: 115.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users" for ::1 at 2018-01-29 12:42:43 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6XFxxs53fASICIW+x+UPwadxbjT5O+1Es6dqpjqvqbXY/99VPtW1FnsmV+3TNc7xb6N/1ux0tkPHBSXbXz4oBA==", "plan"=>"2", "user"=>{"email"=>"testy@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testy@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "testy@example.com"], ["encrypted_password", "$2a$11$hejb4Rj3VZM/LRXzf7l2MeEfslyoDsTsNgJCDedTq3l78XfMTnatq"], ["created_at", 2018-01-29 17:42:43 UTC], ["updated_at", 2018-01-29 17:42:43 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 1101ms (ActiveRecord: 2.0ms)
+
+
+  
+Stripe::InvalidRequestError (This customer has no attached payment source):
+  
+app/models/user.rb:11:in `save_with_payment'
+app/controllers/users/registrations_controller.rb:8:in `block in create'
+app/controllers/users/registrations_controller.rb:4:in `create'
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.8ms)
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (121.0ms)
+Started POST "/users" for ::1 at 2018-01-29 12:54:06 -0500
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /Users/jameshughes/wdi/Udemy/complete-web-developer-course/devmatch_saas/app/controllers/application_controller.rb:4)
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6XFxxs53fASICIW+x+UPwadxbjT5O+1Es6dqpjqvqbXY/99VPtW1FnsmV+3TNc7xb6N/1ux0tkPHBSXbXz4oBA==", "plan"=>"2", "user"=>{"email"=>"testy@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testy@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testy@example.com"], ["LIMIT", 1]]
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/_pro_form.html.erb (4.9ms)
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 147ms (Views: 104.0ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/users" for ::1 at 2018-01-29 12:54:45 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b0zvK+AnzF2eLj6XOCmlGaLe/1TrOdm0g/1MkP931+9ewkG4EIUFT20A7MQs+WQpagzutv52grP3XwPtmuZWXg==", "plan"=>"2", "user"=>{"email"=>"test2y@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test2y@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test2y@example.com"], ["encrypted_password", "$2a$11$FxdYY0CviywVbhcuDbqPbOiy.xT.7ReaQdiiAFDVRezJa4lCt6alm"], ["created_at", 2018-01-29 17:54:45 UTC], ["updated_at", 2018-01-29 17:54:45 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 751ms (ActiveRecord: 3.0ms)
+
+
+  
+Stripe::InvalidRequestError (This customer has no attached payment source):
+  
+app/models/user.rb:11:in `save_with_payment'
+app/controllers/users/registrations_controller.rb:8:in `block in create'
+app/controllers/users/registrations_controller.rb:4:in `create'
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (123.8ms)
+Started POST "/users" for ::1 at 2018-01-29 12:55:11 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /Users/jameshughes/wdi/Udemy/complete-web-developer-course/devmatch_saas/app/controllers/application_controller.rb:4)
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b0zvK+AnzF2eLj6XOCmlGaLe/1TrOdm0g/1MkP931+9ewkG4EIUFT20A7MQs+WQpagzutv52grP3XwPtmuZWXg==", "plan"=>"2", "user"=>{"email"=>"test2y@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test2y@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test2y@example.com"], ["LIMIT", 1]]
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/_pro_form.html.erb (27.3ms)
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (41.2ms)
+Completed 200 OK in 789ms (Views: 551.8ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/users" for ::1 at 2018-01-29 12:55:46 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b0zvK+AnzF2eLj6XOCmlGaLe/1TrOdm0g/1MkP931+9ewkG4EIUFT20A7MQs+WQpagzutv52grP3XwPtmuZWXg==", "plan"=>"2", "user"=>{"email"=>"tesst2y@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tesst2y@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "tesst2y@example.com"], ["encrypted_password", "$2a$11$JhV1mJscmMedujTtT85nE.s19arYXabpm94pn/n2/fATTlF0UkTVq"], ["created_at", 2018-01-29 17:55:47 UTC], ["updated_at", 2018-01-29 17:55:47 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 1120ms (ActiveRecord: 3.2ms)
+
+
+  
+Stripe::InvalidRequestError (This customer has no attached payment source):
+  
+app/models/user.rb:11:in `save_with_payment'
+app/controllers/users/registrations_controller.rb:8:in `block in create'
+app/controllers/users/registrations_controller.rb:4:in `create'
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.1ms)
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (124.9ms)
