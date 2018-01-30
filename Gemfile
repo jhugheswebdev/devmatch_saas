@@ -65,7 +65,7 @@ group :development do
   gem 'devise', '4.2.0'
 
   # Use striper for handling payments
-  gem 'stripe', '1.16.1'
+  gem 'stripe', '1.16'
 
   # Use figaro to hide secret keys
   gem 'figaro', '1.0.0'
