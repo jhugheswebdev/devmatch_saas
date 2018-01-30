@@ -2987,3 +2987,13 @@ Processing by Users::RegistrationsController#new as HTML
 Completed 200 OK in 127ms (Views: 112.2ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/users/sign_up?plan=2" for ::1 at 2018-01-30 13:30:47 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Parameters: {"plan"=>"2"}
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/_pro_form.html.erb (3.0ms)
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 139ms (Views: 138.1ms | ActiveRecord: 0.0ms)
+
+
