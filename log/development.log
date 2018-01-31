@@ -2892,3 +2892,66 @@ app/controllers/users/registrations_controller.rb:4:in `create'
   Rendering /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
   Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
   Rendered /Users/jameshughes/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (124.9ms)
+Started GET "/" for ::1 at 2018-01-31 13:40:43 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /Users/jameshughes/wdi/Udemy/complete-web-developer-course/devmatch_saas/app/controllers/application_controller.rb:4)
+Processing by PagesController#home as HTML
+  [1m[36mPlan Load (0.2ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 590ms (Views: 565.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/sign_up?plan=2" for ::1 at 2018-01-31 13:40:52 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Parameters: {"plan"=>"2"}
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/_pro_form.html.erb (29.5ms)
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (43.1ms)
+Completed 200 OK in 131ms (Views: 116.9ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateProfiles (20180131184419)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "first_name" varchar, "last_name" varchar, "job_title" varchar, "phone_number" varchar, "contact_email" varchar, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180131184419"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_rs_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_rs_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_rs_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_rs_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
